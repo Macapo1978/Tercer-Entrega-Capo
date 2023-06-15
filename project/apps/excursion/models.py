@@ -7,15 +7,24 @@ class Excursion(models.Model):
     requisitos  = models.CharField(max_length=250)
     precio = models.FloatField()
 
+    class Meta:
+        verbose_name = "excursion"
+        verbose_name_plural = "excursiones"
+
     def __str__(self):
         return self.nombre
 
+ 
 class FormaPago(models.Model):
     nombre = models.CharField(max_length=150)
+    descripcion = models.CharField(max_length=500,null=True)
+
+    class Meta:
+        verbose_name = "forma de pago"
 
     def __str__(self):
-        return self.nombre
-
+        return self.nombre  
+ 
 class Cliente(models.Model):
     nombre = models.CharField(max_length=150)
     apelido = models.CharField(max_length=150)

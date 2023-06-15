@@ -1,6 +1,16 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
+    <h3>Hola {{ user.username }}</h3>
+{% endif %}
+
+{% if user.is_staff %}
+    <p><a href="{% url 'admin:index' %}">Administración</a></p>
+    <p><a href="{% url 'home:register' %}">Registrar usuario</a></p>
+{% endif %}
+
 <div class="row gx-4 gx-lg-5 align-items-center my-5">
     <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://fotografias.lasexta.com/clipping/cmsimages02/2019/03/05/417B5470-7EA5-4440-B015-1A0E8C30F6B9/69.jpg?crop=960,540,x0,y89&width=1280&height=720&optimize=high&format=webply" alt="..." /></div>
     <div class="col-lg-5">

@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <h1>Compra de excursion</h1>
+
+    {% block content_excursion %}
+        
+        <h2>Datos del cliente</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Comprar">
+        </form>
+
+    {% endblock content_excursion %}
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'excursion/index.html' %}
+
+{% block content_excursion %}
+
+    <h2>Eliminacion de excursion</h2>
+
+    <p>Confirma eliminar "{{excursion}}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+    </form>
+    
+    <a href="{% url 'excursion:index' %}">Volver</a>
+{% endblock content_excursion %}

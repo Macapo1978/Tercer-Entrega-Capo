@@ -1,0 +1,13 @@
+{% extends 'excursion/index.html' %}
+
+{% block content_excursion %}
+    <h2>Editar excursion</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Editar excursion</button>
+    </form>
+    
+    <a href="{% url 'excursion:index' %}">Volver</a>
+{% endblock content_excursion %}

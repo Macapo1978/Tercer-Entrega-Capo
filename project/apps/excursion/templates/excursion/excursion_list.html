@@ -1,0 +1,16 @@
+{% extends 'excursion/index.html' %}
+
+{% block content_excursion %}
+    <h2>Consulta de excursiones</h2>
+    {% for excursion in excursiones %}
+        <ul>
+            <li>{{excursion}}
+                <a href="{% url 'excursion:excursion_delete' excursion.id %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'excursion:excursion_update' excursion.id %}" class="btn btn-primary">Editar</a>
+            </li>
+        </ul>
+        
+    {% endfor %}
+    
+    <a href="{% url 'excursion:index' %}">Volver</a>
+{% endblock content_excursion %}

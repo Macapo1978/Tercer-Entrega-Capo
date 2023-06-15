@@ -1,12 +1,16 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1>Comprar excursion</h1>
-    <h2>Datos del cliente</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Comprar">
-    </form>
 
+    <h1 class="shadow-lg text-center">Excursion</h1>
+    <div class="container mt-lg-3">
+
+        
+        {% block content_excursion %}
+            <a href="{% url 'excursion:excursion_create' %}" class="btn btn-primary">Alta de excursiones</a><br>
+            <a href="{% url 'excursion:excursion_list' %}" class="btn btn-primary">Consulta de excursiones</a><br>
+        {% endblock content_excursion %}
+
+    </div>
+ 
 {% endblock content %}
